@@ -24,4 +24,5 @@ mkdir -p $BUILD_DIR/vendor/phantomjs
 tar zxf $CACHE_DIR/$FILE_NAME -C $BUILD_DIR/vendor/phantomjs
 cp $BUILD_DIR/vendor/phantomjs/bin/phantomjs $BUILD_DIR/vendor/phantomjs/bin/phantom
 
-
+# Update the PATH (taken from node buildpack)
+status "Building runtime environment"
