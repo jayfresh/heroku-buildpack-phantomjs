@@ -25,4 +25,6 @@ tar zxf $CACHE_DIR/$FILE_NAME -C $BUILD_DIR/vendor/phantomjs
 cp $BUILD_DIR/vendor/phantomjs/bin/phantomjs $BUILD_DIR/vendor/phantomjs/bin/phantom
 
 # Update the PATH (taken from node buildpack)
-status "Building runtime environment"
+echo "Building runtime environment"
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"\$HOME/vendor/phantomjs/bin:\$PATH\";" > $BUILD_DIR/.profile.d/phantomjs.sh
