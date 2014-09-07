@@ -23,3 +23,8 @@ echo "-----> Extracting PhantomJS ${VERSION} binaries to ${BUILD_DIR}/vendor/pha
 mkdir -p $BUILD_DIR/vendor/phantomjs
 tar zxf $CACHE_DIR/$FILE_NAME -C $BUILD_DIR/vendor/phantomjs
 cp $BUILD_DIR/vendor/phantomjs/bin/phantomjs $BUILD_DIR/vendor/phantomjs/bin/phantom
+
+# Update the PATH (taken from node buildpack)
+status "Building runtime environment"
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"\$HOME/vendor/phantomjs/bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
