@@ -13,6 +13,8 @@ S3_BUCKET="stomita-buildpack-phantomjs"
 FILE_NAME="buildpack-phantomjs-${VERSION}.tar.gz"
 BUILDPACK_PHANTOMJS_PACKAGE="http://${S3_BUCKET}.s3.amazonaws.com/${FILE_NAME}"
 
+bp_dir=$(cd $(dirname $0); cd ..; pwd)
+
 # Load some convenience functions like status(), echo(), and indent()
 source $bp_dir/bin/common.sh
 
